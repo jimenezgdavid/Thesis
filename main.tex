@@ -1,0 +1,233 @@
+%Para hacer informe con portada utilizamos report
+
+\documentclass[12pt]{report}
+
+\usepackage[a4paper]{geometry}
+\usepackage[myheadings]{fullpage}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage[T1]{fontenc}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{fourier}
+\usepackage[protrusion=true, expansion=true]{microtype}
+
+%Paquete para hipervinculos
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+%Para qué los subtítulos aparezcan en español
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{sectsty}
+\usepackage{url, lipsum}
+\usepackage{tabularx}
+\usepackage{float}
+
+%--------------------------------------------------
+%Para agregar citas en apa
+%Para citar se usa el comando \cite{}
+%Las referencias se modifican en el archivo sample.bib
+\usepackage{apacite}
+%----------------------------------------------
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\onehalfspacing
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+%-------------------------------------------------------------------------------
+%Encabezado y pie de pagina y numeracion
+%\fancyhead para encabezado
+%\fancyfoot para pie de pagina
+% L para izquierda, left
+% R para derecha, right
+% C para centro, center
+%-------------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\headheight{15pt}
+\fancyhead[L]{\chaptername \ \thechapter} 
+\fancyhead[R]{Universidad de Costa Rica}
+\fancyfoot[R]{\thepage}
+
+\begin{document}
+
+
+%-------------------------------------------------------------------------------
+% Portada
+%-------------------------------------------------------------------------------
+\title{ \normalsize Universidad de Costa Rica \\
+		Facultad de Ingeniería\\
+        Escuela de Ingeniería Civil\\
+		Programa Estudios de Postgrado
+		\\ [2.0cm]
+		\HRule{2pt} \\
+		\LARGE \textbf{Propuesta de Tesis} %para que quede encerrado en las lineas
+		\HRule{2pt} \\ [0.5cm]
+		\normalsize \today \vspace*{5\baselineskip}}
+
+\date{}
+
+\author{
+		David Jiménez González \\ 
+		 jimenezgdavid@gmail.com}
+%se debe incluir el comando \maketitle para hacer 
+\maketitle
+
+%Para hacer el índice solo es necesario agregar 
+\tableofcontents
+\newpage
+
+%-------------------------------------------------------------------------------
+% Section title formatting
+%\sectionfont{\scshape}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% BODY
+%-------------------------------------------------------------------------------
+
+\chapter{Introducción}
+\section{Resumen}
+
+
+\section{Justificación}
+Uno de los principales retos con los que se debe enfrentar el diseñador de infraestructura hidráulica es la obtención de caudales de diseño con los cuales a través de un proceso de análisis sucesivo de configuraciones se determina la geometría de los diferente elementos propios del sistema.
+
+Este caudal, o caudales, está asociado a procesos hidrológicos particulares de la zona de aporte o cuenca que recolecta la escorrentía producida por la precipitación y puede ser obtenido por medio de diferentes métodos en dependencia de la disponibilidad de información acerca del vaso recolector, las características propias del mismo y en algunos casos la preferencia del diseñador.
+
+El número de cuencas instrumentadas en Costa Rica es escaso cuanto más, por lo que es en extremo inusual encontrar que en el punto donde se desea realizar el análisis se tiene información hidrológica con la que trabajar.
+
+La alternativa, en estos casos, es el uso de metodologías de precipitación-escorrentía.
+
+Método racional -> IDF Intensidad Duración Frecuencia
+                -> Tiempo de concentración
+
+Método de hidrograma unitario -> 
+
+Métodos hidrológicos distribuidos.
+
+Cada uno de estos métodos implican diferentes niveles de información de entrada y también de información de salida.
+
+Método racional-> para un proyecto queda claro que se pueden emplear métodos para interpolar los parámetros de las curvas IDFs pero para una cuenca donde se tienen varias estaciones con IDF qué debería emplearse? cuál IDF?
+
+Métodos de hidrograma: además del problema espacial anteriormente mencionado se tiene el problema de la forma en que se está generando la tormenta de diseño ya que para dicha generación se está agarrando una distribución "Característica" y ella se está multiplicando por un volumen en 24 horas.
+
+Esta metodología no necesariamente es la ideal ya que no está captando la lo linealidad de la relación entre el comportamiento de la tormenta y en volumen que se tiene en 24 horas.
+
+Se propone entonces emplear un análisis multivariado de extremos. En este sentido se espera tener una variedad de tormentas que tengan aproximadamente la misma probabilidad de excedencia y que por tanto tendrían en términos generales la misma validez a la hora de hacer el análisis hidrológico. Ahora, si se tuviera alguna idea de la duración a la que la cuenca es más sensible entonces se podría reducir el espacio de búsqueda ya que se podrían probar solamente las tormentas con mayor intensidad de precipitación en dichas duraciones.
+
+Supongamos que una tormenta es una realización de un evento perteneciente a una mismo sistema de generación de eventos aleatorios, entonces se podría ver la máxima intensidad de precipitación en diferentes duraciones como las diferentes variables observadas de este evento, así también el tiempo al centroide de la tormenta, el tiempo al pico, o bien la lluvia acumulada total en diferentes tiempos (que podría ser vista como una distribución de frecuencias).
+
+Lo que es más, la descripción anterior se refiere a la precipitación sólamente en una estación por lo que se observa parcialmente el evento anteriormente mencionado. La multidimensionalidad del fenómeno  se vuelve mucho más evidente cuando se entiende que en cada una de las estaciones contiene un nuevo set de las variables anteriormente mencionadas.
+
+Al realizar un análisis hidrológico donde sencillamente se promedia espacialmente la precipitación mayor en 24 horas y se toma dicho dato para luego ser distribuido temporalmente mediante una función de mapeo lineal, entonces claramente se entiende que la estructura de la precipitación se pierde en el proceso y la probabilidad de excedencia del fenómeno se convierte en mucho mayor que lo que se intencionó originalmente.
+
+\section{antecedentes}
+
+
+
+
+
+\section {Objetivos}
+
+\subsection{Objetivo General}
+
+\begin{itemize}
+
+\item 
+
+\end{itemize}
+
+\subsection{Objetivos específicos}
+
+\begin{itemize}
+
+\item 
+\item 
+\item 
+
+\end{itemize}
+
+\section{Alcances}
+
+\section{Limitaciones}
+
+\chapter{Marco teórico preliminar}
+
+\chapter{Metodología}
+
+\chapter{Planificación}
+\section{Cronograma de actividades}
+
+\section{Posible integración de comité asesor}
+
+
+\newpage
+\chapter{Material de apoyo}
+\section{Links útiles}
+\begin{itemize}
+\item Instalador para MacOS:
+http://www.tug.org/mactex/mactex-download.html
+\item Compiladores en línea:
+\item Generador de tablas:
+\item Manuales de ayuda:
+\end{itemize}
+
+
+%-------------------------------------------------------------------------------
+% REFERENCIAS
+%-------------------------------------------------------------------------------
+\newpage
+
+\bibliographystyle{apacite}
+\bibliography{references.bib}
+
+
+\end{document}
+
+%-------------------------------------------------------------------------------
+% SNIPPETS
+%-------------------------------------------------------------------------------
+
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{file_name}
+%	\caption{}
+%	\centering
+%	\label{label:file_name}
+%\end{figure}
+
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{graph}
+%	\caption{Blood pressure ranges and associated level of hypertension (American Heart Association, 2013).}
+%	\centering
+%	\label{label:graph}
+%\end{figure}
+
+%\begin{wrapfigure}{r}{0.30\textwidth}
+%	\vspace{-40pt}
+%	\begin{center}
+%		\includegraphics[width=0.29\textwidth]{file_name}
+%	\end{center}
+%	\vspace{-20pt}
+%	\caption{}
+%	\label{label:file_name}
+%\end{wrapfigure}
+
+%\begin{wrapfigure}{r}{0.45\textwidth}
+%	\begin{center}
+%		\includegraphics[width=0.29\textwidth]{manometer}
+%	\end{center}
+%	\caption{Aneroid sphygmomanometer with stethoscope (Medicalexpo, 2012).}
+%	\label{label:manometer}
+%\end{wrapfigure}
+
+
